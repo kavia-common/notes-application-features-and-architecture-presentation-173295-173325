@@ -1,0 +1,34 @@
+:root {
+  /* Ocean Professional palette per acceptance criteria */
+  --ocean-primary: #2563EB;   /* Primary */
+  --ocean-secondary: #F59E0B; /* Secondary/Success */
+  --ocean-error: #EF4444;     /* Error */
+  --ocean-text: #111827;      /* Text on light */
+  --ocean-bg: #f9fafb;        /* Background */
+  --ocean-surface: #ffffff;   /* Surface */
+
+  /* Bridge to existing dark tokens from theme/custom.css by tinting accents */
+  --theme-primary-600: #3B82F6;
+  --theme-primary-500: var(--ocean-primary);
+  --theme-primary-400: #3B82F6;
+  --theme-success: var(--ocean-secondary);
+
+  /* Light gradient hint */
+  --ocean-grad: linear-gradient(135deg, rgba(37, 99, 235, 0.10), rgba(249, 250, 251, 1));
+}
+
+/* Examples of using Ocean variables on specific components if needed */
+.feature-card .eyebrow {
+  border-color: color-mix(in oklab, var(--ocean-primary) 25%, #000);
+}
+
+.btn-primary {
+  background: var(--ocean-primary);
+}
+.btn-primary:hover {
+  background: #1D4ED8;
+}
+
+.btn-secondary {
+  border-color: color-mix(in oklab, var(--ocean-primary) 20%, #000);
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nimbus Notes">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="6" width="36" height="36" rx="10" fill="url(#grad)"/>
+  <path d="M14 30 L24 18 L32 26" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="30" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#E5E7EB">Nimbus Notes</text>
+</svg>

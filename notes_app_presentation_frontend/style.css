@@ -1,2 +1,4 @@
 /* style.css */
 @import "./theme/custom.css";
+/* Ocean Professional additional tokens */
+@import "./styles/custom.css";

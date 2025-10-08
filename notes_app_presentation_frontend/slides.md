@@ -1,10 +1,11 @@
 ---
 # Global deck settings
 theme: default
-title: Your Presentation Title
+title: "Nimbus Notes — Features & Architecture"
 info: |
-  Professional presentation template with dark theme
-  20 slides with modern components
+  Ocean Professional themed presentation for the Nimbus Notes application.
+  Sections: Title, Agenda, Problem & Goals, Key Features, Architecture, Data Model,
+  API/Flows, UI/UX Demo, Security, Performance, Roadmap, Q&A.
 class: text-left
 mdc: true
 transition: slide-left
@@ -15,560 +16,297 @@ css: |
   @import "./style.css";
 ---
 
-# PROJECT TITLE
+# Nimbus Notes
 <div class="title-slide with-hero-glow">
+  <img src="/logo.svg" alt="Nimbus Notes" class="logo" />
   <div class="hero-copy">
-    <h2 class="text-hero">Transform Your Business with Innovation</h2>
-    <p class="subtitle text-md">A comprehensive solution for modern enterprises</p>
-    <div class="subtitle text-xs">Presenter Name • Date • contact@example.com</div>
+    <h2 class="text-hero">Fast. Secure. Delightful Note‑Taking.</h2>
+    <p class="subtitle text-md">Organize ideas, collaborate in real-time, and sync across devices</p>
+    <div class="subtitle text-xs">Presented by: Product & Engineering • 2025</div>
     <div class="hero-ctas mt-2">
-      <button class="btn-primary">Get Started</button>
-      <button class="btn-secondary">Learn More</button>
+      <button class="btn-primary">Live Demo</button>
+      <button class="btn-secondary">Docs</button>
     </div>
   </div>
 </div>
 
+<!-- Presenter Notes -->
+Notes:
+- Welcome and intro to Nimbus Notes.
+- Emphasize Ocean Professional aesthetics and cross‑platform sync.
+
 ---
 
-# The Challenge
+# Agenda
+
+- Problem & Goals
+- Key Features
+- Architecture Overview
+- Data Model
+- API & Flows
+- UI/UX Demo Screens
+- Security & Permissions
+- Performance
+- Roadmap
+- Q&A
+
+Notes:
+- Set expectations for the flow and outcomes.
+
+---
+
+# Problem & Goals
 
 <div class="problem-grid">
   <div class="problem-card">
-    <div class="eyebrow">Current State</div>
-    <h3 class="feature-title">Market Inefficiencies</h3>
+    <div class="eyebrow">Problem</div>
+    <h3 class="feature-title">Note Chaos</h3>
     <ul class="points-clean">
-      <li>Complex processes and workflows</li>
-      <li>Disconnected systems and data silos</li>
-      <li>High operational costs</li>
+      <li>Scattered notes across devices and apps</li>
+      <li>Poor searchability and organization</li>
+      <li>Hard to share and collaborate securely</li>
     </ul>
   </div>
-
   <div class="problem-card">
-    <div class="eyebrow">Industry Trends</div>
-    <h3 class="feature-title">Rapid Digital Evolution</h3>
+    <div class="eyebrow">Vision</div>
+    <h3 class="feature-title">Unified Knowledge</h3>
     <ul class="points-clean">
-      <li>Accelerating technology adoption</li>
-      <li>Changing customer expectations</li>
-      <li>New competitive pressures</li>
+      <li>One place for all notes and tasks</li>
+      <li>Fast, offline-first, real-time collaboration</li>
+      <li>Granular permissions and enterprise security</li>
     </ul>
   </div>
-
   <div class="problem-card">
-    <div class="eyebrow">Gap Analysis</div>
-    <h3 class="feature-title">Missing Capabilities</h3>
+    <div class="eyebrow">Goals</div>
+    <h3 class="feature-title">Measurable Outcomes</h3>
     <ul class="points-clean">
-      <li>Limited automation tools</li>
-      <li>Insufficient analytics</li>
-      <li>Poor integration options</li>
-      <li>Lack of scalability</li>
+      <li><strong>2x</strong> faster capture and retrieval</li>
+      <li><strong>95%</strong> search success rate</li>
+      <li>Zero‑trust sharing model</li>
     </ul>
   </div>
 </div>
 
----
-
-# Our Solution
-
-A comprehensive platform that addresses key business challenges
-
-<div class="stats-band mt-2">
-  <div class="stat-card">
-    <div class="stat-number">10x</div>
-    <div class="stat-label">Faster Processing</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">50%</div>
-    <div class="stat-label">Cost Reduction</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">99.9%</div>
-    <div class="stat-label">Uptime</div>
-  </div>
-</div>
-
-<div class="card-grid three mt-2">
-  <div class="feature-card">
-    <div class="eyebrow">Core</div>
-    <h3 class="feature-title">Intelligent Automation</h3>
-    <p class="muted">Streamline workflows with AI-powered processes</p>
-  </div>
-
-  <div class="feature-card">
-    <div class="eyebrow">Integration</div>
-    <h3 class="feature-title">Seamless Connectivity</h3>
-    <p class="muted">Connect all your tools and systems effortlessly</p>
-  </div>
-
-  <div class="feature-card">
-    <div class="eyebrow">Analytics</div>
-    <h3 class="feature-title">Real-time Insights</h3>
-    <p class="muted">Make data-driven decisions with powerful analytics</p>
-  </div>
-</div>
+Notes:
+- Tie goals to measurable KPIs (speed, search success, security posture).
 
 ---
 
 # Key Features
 
-<div class="split-cols mt-2">
-  <div class="left">
-    <div class="feature-card">
-      <h3 class="feature-title">Smart Dashboard</h3>
-      <p class="muted">Centralized control and monitoring</p>
-    </div>
-    <div class="feature-card">
-      <h3 class="feature-title">Advanced Analytics</h3>
-      <p class="muted">Deep insights and predictive modeling</p>
-    </div>
-    <div class="feature-card">
-      <h3 class="feature-title">Workflow Automation</h3>
-      <p class="muted">Streamline repetitive tasks</p>
-    </div>
-  </div>
-  <div class="right">
-    <div class="glass-frame tall">
-      <div class="placeholder">Product Screenshot / Dashboard UI</div>
-    </div>
-  </div>
+<div class="card-grid three mt-2">
+  <FeatureCard title="Rich Editor" icon="📝"
+    :bullets='["Markdown + WYSIWYG", "Slash commands", "Embeds & attachments"]' />
+  <FeatureCard title="Organization" icon="🗂️"
+    :bullets='["Folders & tags", "Pinned notes", "Smart filters"]' />
+  <FeatureCard title="Search" icon="🔎"
+    :bullets='["Full-text & tag search", "Filters", "Saved queries"]' />
+
+  <FeatureCard title="Collaboration" icon="🤝"
+    :bullets='["Live cursors", "Comments & mentions", "Version history"]' />
+  <FeatureCard title="Sync" icon="🔄"
+    :bullets='["Offline-first", "Delta sync", "Conflict resolution"]' />
+  <FeatureCard title="Security" icon="🔐"
+    :bullets='["E2E encryption (optional)", "RBAC", "Audit logs"]' />
 </div>
+
+Notes:
+- Show breadth with depth: editor, org, search, collab, sync, security.
 
 ---
 
 # Architecture Overview
 
-```mermaid
-%%{init: {
-  "theme": "dark",
-  "themeVariables": {
-    "primaryTextColor": "#E6EDF3",
-    "primaryColor": "#0B1220",
-    "lineColor": "#6E7681"
-  }
-}}%%
+<ArchDiagram />
 
-flowchart TD
-    UI[🖥️ User Interface] --> API[⚙️ API Gateway]
-    API --> Auth[🔐 Authentication]
-    API --> Core[💼 Core Services]
-    Core --> DB[(📊 Database)]
-    Core --> Cache[(⚡ Cache)]
-    Core --> Queue[📬 Message Queue]
-    Queue --> Workers[🤖 Background Workers]
-    
-    style UI fill:#1C1A2B,stroke:#6B7FEB
-    style API fill:#1C1A2B,stroke:#6B7FEB
-    style Core fill:#1C1A2B,stroke:#6B7FEB
-    style DB fill:#2B2931,stroke:#40D79E
-    style Cache fill:#2B2931,stroke:#FFC75A
-```
+Notes:
+- Explain client-heavy approach with API gateway and modular services.
+- Mention WebSocket for presence and CRDT/OT for real-time editing.
 
 ---
 
-# Use Cases
+# Data Model
 
-<div class="card-grid three mt-2">
-  <div class="feature-card"><h3 class="feature-title">Enterprise Resource Planning</h3><p class="muted">Unified business management</p></div>
-  <div class="feature-card"><h3 class="feature-title">Customer Relationship Management</h3><p class="muted">360-degree customer view</p></div>
-  <div class="feature-card"><h3 class="feature-title">Supply Chain Optimization</h3><p class="muted">End-to-end visibility</p></div>
-  <div class="feature-card"><h3 class="feature-title">Financial Analytics</h3><p class="muted">Real-time financial insights</p></div>
-  <div class="feature-card"><h3 class="feature-title">HR Management</h3><p class="muted">Streamlined HR processes</p></div>
-  <div class="feature-card"><h3 class="feature-title">Project Management</h3><p class="muted">Collaborative project tracking</p></div>
-</div>
+<DataModel />
+
+Notes:
+- Keep model minimal but extensible (custom metadata, tags).
+- IDs are ULIDs to preserve temporal ordering and uniqueness.
 
 ---
 
-# Market Opportunity
+# API & Flows
 
-<div class="split-cols mt-2">
-  <div class="left">
-    <div class="feature-card">
-      <div class="eyebrow">TAM</div>
-      <h3 class="feature-title">Total Addressable Market</h3>
-      <p class="muted">$100B+ globally</p>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Growth</div>
-      <h3 class="feature-title">Market Expansion</h3>
-      <p class="muted">25% CAGR expected</p>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Segments</div>
-      <ul class="points-clean">
-        <li>Enterprise (500+ employees)</li>
-        <li>Mid-market (50-500)</li>
-        <li>SMB (under 50)</li>
-      </ul>
-    </div>
+<div class="card grid-2 mt-2">
+  <div>
+    <div class="eyebrow">Create & Edit</div>
+    <ul class="points-clean">
+      <li>POST /api/notes — create note</li>
+      <li>PATCH /api/notes/{id} — update content/metadata</li>
+      <li>PUT /api/notes/{id}/share — share with users/teams</li>
+    </ul>
+
+    <div class="eyebrow mt-1">Sync</div>
+    <ul class="points-clean">
+      <li>GET /api/sync/notes?cursor=... — incremental fetch</li>
+      <li>WS /realtime — presence, comments, edits</li>
+    </ul>
+
+    <div class="eyebrow mt-1">Search</div>
+    <ul class="points-clean">
+      <li>GET /api/search?q=...&tags=... — full-text + filters</li>
+    </ul>
   </div>
-  <div class="right">
-    <div class="glass-frame">
-      <div class="placeholder">Market Size Chart</div>
+  <div>
+    <div class="glass-frame tall">
+      <div class="placeholder">Sequence Diagram: Edit → Sync → Broadcast</div>
     </div>
   </div>
 </div>
 
+Notes:
+- Stress pagination via cursor, delta sync, idempotent updates.
+
 ---
 
-# Competitive Landscape
-
-<div class="glass-frame wide mt-2">
-  <div class="placeholder">Competitive Positioning Matrix</div>
-</div>
+# UI/UX Demo Screens
 
 <div class="card-grid three mt-2">
   <div class="feature-card">
-    <h3 class="feature-title">Our Advantages</h3>
+    <div class="eyebrow">Home</div>
+    <h3 class="feature-title">Notebook Overview</h3>
     <ul class="points-clean">
-      <li>Superior technology</li>
-      <li>Better user experience</li>
-      <li>Competitive pricing</li>
+      <li>Recent notes, starred, quick capture</li>
+      <li>Global search input</li>
     </ul>
   </div>
   <div class="feature-card">
-    <h3 class="feature-title">Market Position</h3>
+    <div class="eyebrow">Editor</div>
+    <h3 class="feature-title">Rich Content Editing</h3>
     <ul class="points-clean">
-      <li>Leader in innovation</li>
-      <li>Strong brand recognition</li>
-      <li>Growing market share</li>
+      <li>Markdown + toolbar</li>
+      <li>Comments and mentions</li>
     </ul>
   </div>
   <div class="feature-card">
-    <h3 class="feature-title">Differentiators</h3>
+    <div class="eyebrow">Sharing</div>
+    <h3 class="feature-title">Granular Permissions</h3>
     <ul class="points-clean">
-      <li>AI-powered features</li>
-      <li>Seamless integrations</li>
-      <li>Enterprise-grade security</li>
+      <li>Viewer/Commenter/Editor/Owner</li>
+      <li>Link-based and domain-based</li>
     </ul>
   </div>
 </div>
 
+Notes:
+- These are conceptual mockups—focus on information hierarchy.
+
 ---
 
-# Implementation Timeline
+# Security & Permissions
+
+<div class="card-grid three mt-2">
+  <div class="feature-card">
+    <div class="eyebrow">AuthN/Z</div>
+    <ul class="points-clean">
+      <li>OIDC / OAuth 2.1, optional SSO/SAML</li>
+      <li>RBAC with roles: viewer, commenter, editor, owner</li>
+    </ul>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Data Protection</div>
+    <ul class="points-clean">
+      <li>At-rest AES-256, in-transit TLS 1.3</li>
+      <li>Optional E2EE for private spaces</li>
+    </ul>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Compliance</div>
+    <ul class="points-clean">
+      <li>GDPR, SOC 2 Type II</li>
+      <li>Audit trails & retention policies</li>
+    </ul>
+  </div>
+</div>
+
+Notes:
+- Clarify E2EE trade-offs with server-side search and collaboration.
+
+---
+
+# Performance
+
+<div class="stats-grid mt-2">
+  <div class="stat-card">
+    <div class="stat-number">50ms</div>
+    <div class="stat-label">Editor TTI</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">p95&lt;200ms</div>
+    <div class="stat-label">API Latency</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">99.95%</div>
+    <div class="stat-label">Uptime</div>
+  </div>
+</div>
+
+- Offline caching with IndexedDB
+- Streaming renders for large docs
+- Incremental search indexing
+- Lightweight delta protocol for sync
+
+Notes:
+- Mention edge caching and CDN for static/editor bundles.
+
+---
+
+# Roadmap
 
 <div class="timeline mt-2">
   <div class="time-node">
     <div class="time-dot"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 1: Q1 2025</div>
-      <h4>Foundation</h4>
+      <div class="eyebrow">Q1</div>
       <ul class="points-clean">
-        <li>System architecture design</li>
-        <li>Core infrastructure setup</li>
-        <li>Initial team formation</li>
+        <li>MVP: editor, folders, basic search</li>
+        <li>Local encryption, device sync</li>
       </ul>
     </div>
   </div>
   <div class="time-node">
     <div class="time-dot"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 2: Q2 2025</div>
-      <h4>Development</h4>
+      <div class="eyebrow">Q2</div>
       <ul class="points-clean">
-        <li>MVP development</li>
-        <li>Beta testing program</li>
-        <li>Initial customer feedback</li>
+        <li>Collaboration: comments, presence</li>
+        <li>Mobile apps (iOS/Android)</li>
       </ul>
     </div>
   </div>
   <div class="time-node">
     <div class="time-dot future"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 3: Q3 2025</div>
-      <h4>Launch</h4>
+      <div class="eyebrow">Q3+</div>
       <ul class="points-clean">
-        <li>Public release</li>
-        <li>Marketing campaign</li>
-        <li>Customer onboarding</li>
+        <li>AI: summaries, smart tags, Q&A over notes</li>
+        <li>Enterprise: SSO, DLP, Admin APIs</li>
       </ul>
     </div>
   </div>
 </div>
 
----
-
-# Success Metrics
-
-<div class="stats-grid mt-2">
-  <div class="stat-card">
-    <div class="stat-number">1M+</div>
-    <div class="stat-label">Active Users</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">$50M</div>
-    <div class="stat-label">ARR</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">95%</div>
-    <div class="stat-label">Retention Rate</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">150</div>
-    <div class="stat-label">Enterprise Clients</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">4.8</div>
-    <div class="stat-label">Customer Rating</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">24/7</div>
-    <div class="stat-label">Support</div>
-  </div>
-</div>
+Notes:
+- Align roadmap with customer feedback loops and analytics.
 
 ---
 
-# Case Study
-
-<div class="split-cols mt-2">
-  <div class="left">
-    <div class="feature-card">
-      <div class="eyebrow">Client</div>
-      <h3 class="feature-title">Fortune 500 Company</h3>
-      <ul class="points-clean">
-        <li>10,000+ employees</li>
-        <li>Global operations</li>
-        <li>Complex IT infrastructure</li>
-      </ul>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Challenge</div>
-      <ul class="points-clean">
-        <li>Fragmented systems</li>
-        <li>Manual processes</li>
-        <li>Limited visibility</li>
-      </ul>
-    </div>
-  </div>
-  <div class="right">
-    <div class="feature-card glass">
-      <div class="eyebrow">Results</div>
-      <h3 class="feature-title">Transformation Achieved</h3>
-      <ul class="points-clean">
-        <li>60% efficiency improvement</li>
-        <li>$5M annual savings</li>
-        <li>Real-time insights</li>
-      </ul>
-    </div>
-    <div class="glass-frame short">
-      <div class="placeholder">ROI Chart</div>
-    </div>
-  </div>
-</div>
-
----
-
-# Pricing & Plans
-
-<div class="card-grid three mt-2">
-  <div class="feature-card">
-    <div class="eyebrow">Starter</div>
-    <h3 class="feature-title">$99/month</h3>
-    <ul class="points-clean">
-      <li>Up to 10 users</li>
-      <li>Basic features</li>
-      <li>Email support</li>
-      <li>5GB storage</li>
-    </ul>
-    <button class="btn-secondary mt-2">Choose Plan</button>
-  </div>
-  <div class="feature-card">
-    <div class="pill">Popular</div>
-    <h3 class="feature-title">$299/month</h3>
-    <ul class="points-clean">
-      <li>Up to 50 users</li>
-      <li>Advanced features</li>
-      <li>Priority support</li>
-      <li>100GB storage</li>
-      <li>API access</li>
-    </ul>
-    <button class="btn-primary mt-2">Choose Plan</button>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Enterprise</div>
-    <h3 class="feature-title">Custom</h3>
-    <ul class="points-clean">
-      <li>Unlimited users</li>
-      <li>All features</li>
-      <li>Dedicated support</li>
-      <li>Unlimited storage</li>
-      <li>Custom integrations</li>
-    </ul>
-    <button class="btn-secondary mt-2">Contact Sales</button>
-  </div>
-</div>
-
----
-
-# Technology Stack
-
-<div class="feature-grid mt-2">
-  <div class="feature-card">
-    <div class="eyebrow">Frontend</div>
-    <ul class="points-clean">
-      <li>React / Vue.js / Angular</li>
-      <li>TypeScript</li>
-      <li>Tailwind CSS</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Backend</div>
-    <ul class="points-clean">
-      <li>Node.js / Python / Go</li>
-      <li>GraphQL / REST APIs</li>
-      <li>Microservices</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Infrastructure</div>
-    <ul class="points-clean">
-      <li>AWS / Azure / GCP</li>
-      <li>Kubernetes</li>
-      <li>CI/CD pipelines</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Data</div>
-    <ul class="points-clean">
-      <li>PostgreSQL / MongoDB</li>
-      <li>Redis</li>
-      <li>Elasticsearch</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Security</div>
-    <ul class="points-clean">
-      <li>End-to-end encryption</li>
-      <li>OAuth 2.0 / SAML</li>
-      <li>SOC 2 compliant</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Monitoring</div>
-    <ul class="points-clean">
-      <li>Prometheus / Grafana</li>
-      <li>ELK Stack</li>
-      <li>APM tools</li>
-    </ul>
-  </div>
-</div>
-
----
-
-# Team
-
-<div class="card-grid four mt-2">
-  <div class="feature-card">
-    <h4 class="feature-title">CEO</h4>
-    <p class="muted small">20+ years experience</p>
-    <p class="muted small">Former Fortune 500 exec</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CTO</h4>
-    <p class="muted small">15+ years in tech</p>
-    <p class="muted small">Ex-FAANG engineer</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CPO</h4>
-    <p class="muted small">Product visionary</p>
-    <p class="muted small">3 successful exits</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CFO</h4>
-    <p class="muted small">Finance expert</p>
-    <p class="muted small">IPO experience</p>
-  </div>
-</div>
-
-<div class="card mt-2">
-  <h3>Advisory Board</h3>
-  <ul class="points-clean">
-    <li>Industry veterans from leading tech companies</li>
-    <li>Domain experts in enterprise software</li>
-    <li>Strategic advisors with deep market connections</li>
-  </ul>
-</div>
-
----
-
-# Customer Testimonials
-
-<div class="card-grid two mt-2">
-  <div class="feature-card glass">
-    <p class="muted">"This platform transformed our operations. We've seen incredible efficiency gains and cost savings."</p>
-    <div class="mt-2">
-      <strong>John Smith</strong><br>
-      <span class="text-xs muted">CTO, Tech Corp</span>
-    </div>
-  </div>
-  <div class="feature-card glass">
-    <p class="muted">"The best investment we've made. ROI was evident within the first quarter."</p>
-    <div class="mt-2">
-      <strong>Jane Doe</strong><br>
-      <span class="text-xs muted">CEO, Innovation Inc</span>
-    </div>
-  </div>
-</div>
-
----
-
-# Next Steps
-
-<div class="cta-band">
-  <div>
-    <div class="overline">Get Started Today</div>
-    <h2 class="text-hero">Ready to Transform Your Business?</h2>
-    <p class="muted">Join thousands of companies already using our platform</p>
-    <div class="cta-actions">
-      <button class="btn-primary">Start Free Trial</button>
-      <button class="btn-secondary">Schedule Demo</button>
-    </div>
-  </div>
-  <div>
-    <div class="card">
-      <div class="eyebrow">Contact</div>
-      <ul class="points-clean">
-        <li>Sales: sales@example.com</li>
-        <li>Support: support@example.com</li>
-        <li>Phone: 1-800-EXAMPLE</li>
-      </ul>
-      <div class="muted small mt-4">www.example.com</div>
-    </div>
-  </div>
-</div>
-
----
-
-# Appendix
-
-<div class="card-grid two mt-2">
-  <div class="feature-card">
-    <h3 class="feature-title">Resources</h3>
-    <ul class="points-clean">
-      <li>Technical documentation</li>
-      <li>API reference</li>
-      <li>Video tutorials</li>
-      <li>Community forum</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <h3 class="feature-title">Legal</h3>
-    <ul class="points-clean">
-      <li>Terms of service</li>
-      <li>Privacy policy</li>
-      <li>Security compliance</li>
-      <li>SLA agreements</li>
-    </ul>
-  </div>
-</div>
-
----
 layout: center
 class: text-center
 ---
 
-# Thank You
+# Q&A
 
-Questions?
+Ask us anything.
 
-<div class="mt-4 subtle">Press S for presenter mode • Press E to open editor • Use arrow keys to navigate</div>
+<div class="mt-4 subtle">Press S for presenter mode • Use arrow keys to navigate</div>
